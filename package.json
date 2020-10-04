@@ -1,0 +1,73 @@
+{
+  "name": "fashioning-uganda",
+  "version": "2.0.1",
+  "dependencies": {
+    "@types/react-helmet": "^5.0.7",
+    "@types/react-scroll": "^1.5.4",
+    "axios": "^0.18.0",
+    "classnames": "^2.2.6",
+    "gsap": "^2.1.3",
+    "node": "^10.10.0",
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0",
+    "react-helmet": "^5.2.0",
+    "react-md-spinner": "^0.3.0",
+    "react-reveal": "^1.2.2",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "react-scroll": "^1.7.11"
+  },
+  "devDependencies": {
+    "@types/classnames": "^2.2.6",
+    "@types/copy-webpack-plugin": "^5.0.0",
+    "@types/gsap": "^1.20.2",
+    "@types/html-webpack-plugin": "^3.2.0",
+    "@types/node": "^12.0.10",
+    "@types/react": "^16.8.0",
+    "@types/react-dom": "^16.8.0",
+    "@types/react-router": "^4.0.31",
+    "@types/react-router-dom": "^4.3.1",
+    "@types/webpack": "^4.4.34",
+    "@types/webpack-dev-server": "^3.1.6",
+    "awesome-typescript-loader": "^5.2.1",
+    "copy-webpack-plugin": "^4.5.2",
+    "css-loader": "^1.0.0",
+    "file-loader": "^2.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "husky": "^3.0.0",
+    "node-sass": "^4.9.3",
+    "prettier": "^1.19.1",
+    "react-snap": "^1.20.0",
+    "sass-loader": "^7.1.0",
+    "source-map-loader": "^0.2.4",
+    "style-loader": "^0.23.0",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.5.2",
+    "typings-for-css-modules-loader": "^1.7.0",
+    "webapp-webpack-plugin": "^2.6.0",
+    "webpack": "^4.19.1",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.8"
+  },
+  "scripts": {
+    "build": "rm -rf dist/ && TS_NODE_FILES=true webpack && react-snap",
+    "start": "TS_NODE_FILES=true webpack-dev-server --open",
+    "watch": "TS_NODE_FILES=true webpack --watch"
+  },
+  "reactSnap": {
+    "puppeteerArgs": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox"
+    ],
+    "source": "dist",
+    "include": [
+      "/"
+    ],
+    "waitFor": 1000
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run generate"
+    }
+  }
+}
